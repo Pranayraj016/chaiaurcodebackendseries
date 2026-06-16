@@ -1,5 +1,6 @@
+// @ts-nocheck
 const asyncHandler = (reqestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(reqestHandler(req, res, next)).catch((err) => next(err));
   };
 };
